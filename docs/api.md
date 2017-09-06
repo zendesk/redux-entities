@@ -39,7 +39,7 @@ const editableUser = (state, action) => {
 export default combineReducers({
   entities:  createEntityReducer(
     'entities',
-    { todos: nukeStore, users: nukeStore() },
+    { todos: nukeStore, users: nukeStore },
     { users: editableUser }
   )
 })
@@ -133,7 +133,7 @@ You can also pass in your own selectors as the third parameter if you have added
 import { createEntitySelectors, entitySelectors } from 'alexs-redux-fetch';
 
 // Todo selectors
-const todoSelectors = createEntitySelectors('todo')
+const todoSelectors = createEntitySelectors('todo', state => entities)
 todoSelectors.getById(state, 123) // getById(state, 'todo', 123)
 
 // User selectors
@@ -147,7 +147,7 @@ const getUsername = (state, entityName, id) => {
   return user.username;
 }
 
-const userSelectors = createEntitySelectors('user', undefined, {
+const userSelectors = createEntitySelectors('user', state => entities, {
   ...entitySelectors,
   getUsername
 });
