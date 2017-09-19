@@ -4,7 +4,6 @@ import byId, { selectors as byIdSelectors } from './by-id';
 import timestamp, { selectors as timestampSelectors } from './timestamp';
 import editable, { selectors as editableSelectors } from './editable';
 import createConfigurableReducer from './../utils/create-configurable-reducer';
-import optimistic, { selectors as optimisticSelectors } from './optimistic';
 
 export default (entityGroup = 'entities', byIdReducers = {}, editableReducers = {}) => combineReducers({
   byId: createConfigurableReducer(byId(entityGroup), byIdReducers),
