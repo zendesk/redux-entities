@@ -27,10 +27,10 @@
     "webpack": "^2.4.1"
   },
   "peerDependencies": {
-    "lodash": "^4.17.4",
     "redux": "^3.6.0"
   },
   "dependencies": {
-    "alexs-redux-helpers": "^1.0.17"
+    "alexs-redux-helpers": "^1.0.17",
+    "lodash": "^4.17.4"
   }
 }
