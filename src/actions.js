@@ -5,9 +5,7 @@ import {
   stopEditingRef,
   BEGIN_EDITING,
   UPDATE_EDITABLE,
-  STOP_EDITING,
-  OPTIMISTIC_UPDATE,
-  RESOLVE_OPTIMISTIC_UPDATE
+  STOP_EDITING
 } from './action-types';
 
 /**
@@ -43,18 +41,3 @@ export const createEditActions = (entityGroup, entityName) => Object.keys(editAc
     [actionName]: (...params) => editActions[actionName](entityGroup, entityName, ...params)
   }), {}
 );
-
-export const optimisticUpdate = (entityGroup, ref, optimisticEntities) => ({
-  type: OPTIMISTIC_UPDATE(entityGroup),
-  payload: {
-    ref,
-    optimisticEntities
-  }
-});
-
-export const resolveOptimisticUpdate = (entityGroup, ref) => ({
-  type: RESOLVE_OPTIMISTIC_UPDATE(entityGroup),
-  payload: {
-    ref
-  }
-});
