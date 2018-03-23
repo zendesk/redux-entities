@@ -2,7 +2,7 @@
   "name": "alexs-redux-entities",
   "version": "0.0.18",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "lib/index.js",
   "author": "",
   "license": "Apache-2.0",
   "scripts": {
@@ -33,5 +33,9 @@
   "dependencies": {
     "alexs-redux-helpers": "^1.0.17",
     "lodash": "^4.17.4"
-  }
+  },
+  "files": [
+    "lib",
+    "src"
+  ]
 }
