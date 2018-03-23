@@ -7,12 +7,12 @@
   "license": "Apache-2.0",
   "scripts": {
     "build:main": "webpack --mode production",
-    "build:module": "babel src --out-dir lib",
+    "build:module": "babel src --out-dir lib --ignore *.test.js",
     "build": "npm run build:main && npm run build:module",
     "test": "jest",
     "test:watch": "jest --watch",
-    "copypackage": "cp -rf package.json lib",
-    "dist": "npm run build && npm run copypackage && cd lib && npm publish && cd .. && rm -rf lib"
+    "clean": "rm -rf lib",
+    "prepare": "npm run test && npm run clean && npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
