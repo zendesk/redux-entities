@@ -32,6 +32,6 @@
   },
   "dependencies": {
     "alexs-redux-helpers": "^1.0.17",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.21"
   }
 }
